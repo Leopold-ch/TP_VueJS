@@ -1,0 +1,92 @@
+@import './base.css';
+
+#app {
+  color: #000;
+  margin: 0 auto;
+  font-weight: normal;
+  background-color: rgb(247, 236, 204);
+  padding: 0 2rem;
+  display: flex;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+h1{
+  margin-bottom: 2vh;
+  font-size: 3em;
+}
+
+p{
+  font-size: 1.1em;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+ul{
+  list-style: circle;
+}
+
+#everyQuestions > *{
+  margin: 1vh 0 4vh 0;
+  list-style: square;
+}
+
+section{
+  margin-top: 9vh;
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(0, 72, 189);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+a:hover {
+  background-color: hsla(219, 100%, 37%, 0.2);
+}
+
+button {
+  color: white;
+  background-color: #242424;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+button:hover {
+  color: #242424;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+.yes{
+  background-color: greenyellow;
+  color: #000;
+}
+
+.no{
+  background-color: red;
+  color: #000;
+}
+
+.rename{
+  background-color: orange;
+  color: #000;
+}
