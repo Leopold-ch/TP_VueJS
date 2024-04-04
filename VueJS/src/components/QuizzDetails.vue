@@ -87,28 +87,27 @@ export default {
       this.showNewQuestionForm = false;
       this.$emit('questionCreatedToApp', this.selectedQuiz.url);
     },
-    editQuestionName(question) {
-  const newQuestionTitle = prompt("Saisissez la nouvelle question :", question.title);
-  if (newQuestionTitle !== null) {
-    fetch(`${question.url}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ title: newQuestionTitle })
-    })
-    .then(response => {
-      if (response.ok) {
-        question.title = newQuestionTitle;
-      } else {
-        console.error('Failed to update question title');
+    async editQuestionName(question) {
+      const newQuestionTitle = prompt("Saisissez la nouvelle question :", question.title);
+      if (newQuestionTitle !== null) {
+        try{
+          let response = await fetch(`${question.url}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ title: newQuestionTitle })
+          });
+          if (response.ok) {
+            question.title = newQuestionTitle;
+          } else {
+            console.error('Failed to update question title');
+          }
+        } catch(error) {
+          console.error('Error updating question title :', error);
+        };
       }
-    })
-    .catch(error => {
-      console.error('Error updating question title :', error);
-    });
-  }
-}
+    }
 
   },
   components: {
